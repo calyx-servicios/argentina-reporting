@@ -39,6 +39,7 @@
         'report_configuration_defaults_data.xml',
         'invoice_report.xml',
         'invoice_template.xml',
+        'views/res_company.xml',
     ],
     'demo': [
     ],
