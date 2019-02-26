@@ -9,4 +9,5 @@ class ResCompany(models.Model):
     _inherit = 'res.company'
     _name = 'res.company'
 
+    quantity_copy_invoice = fields.Integer(string="Quantity Copy of Invoice" , default=1)
     logo_invoice = fields.Binary(string="Company Invoice Logo")

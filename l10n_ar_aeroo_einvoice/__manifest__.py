@@ -30,6 +30,7 @@
         'l10n_ar_afipws_fe',
         # suponemos que si instalas este queres el comun tmb
         'l10n_ar_aeroo_invoice',
+        'report_aeroo_extra_function',
         # 'report_extended_account',
         # 'l10n_ar_aeroo_base',
     ],
@@ -47,3 +48,4 @@
     'auto_install': False,
     'application': False,
 }
+

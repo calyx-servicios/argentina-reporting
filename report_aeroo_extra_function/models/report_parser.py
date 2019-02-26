@@ -46,7 +46,7 @@ class ReportAerooAbstract(models.AbstractModel):
 
 
 
-    def _calcule_quantity_sum(self, line_obj,var_control_name, var_control_length):
+    def _calcule_quantity_sum(self, line_obj,var_control_name, var_control_length,var_control_first_double):
         expr = "summ = len(o.%s)" % var_control_name
         localspace = {'o':line_obj, 'summ':0}
         exec(expr, localspace)
@@ -54,27 +54,30 @@ class ReportAerooAbstract(models.AbstractModel):
         var_return = 0 
         while aux > 0:
             var_return +=1
-            aux -=var_control_length
+            summ = var_control_length
+            if var_return==0 and var_control_first_double:
+                summ = summ+summ
+            aux -=summ
         return var_return
 
 
-    def _add_page(self,list_page, list_page_line,aux,quantity_copie,previus_list_page):
+    def _add_page(self,list_page, list_page_line,aux,quantity_copie,previus_list_page,complete_list=''):
 
         if quantity_copie >= 1:
             page = {'line_ids' :list_page_line,'number_of_page':aux,'new_page':1, 
-                    'name_copie':'ORIGINAL','previus_list_page':previus_list_page}
+                    'name_copie':'ORIGINAL','previus_list_page':previus_list_page,'complete_list':complete_list}
             list_page.append(page)
         if quantity_copie >= 2:
             page = {'line_ids' :list_page_line,'number_of_page':aux,'new_page':1,
-                    'name_copie':'DUPLICADO','previus_list_page':previus_list_page}
+                    'name_copie':'DUPLICADO','previus_list_page':previus_list_page,'complete_list':complete_list}
             list_page.append(page)
         if quantity_copie >= 3:
             page = {'line_ids' :list_page_line,'number_of_page':aux,'new_page':1,
-                    'name_copie':'TRIPLICADO','previus_list_page':previus_list_page}
+                    'name_copie':'TRIPLICADO','previus_list_page':previus_list_page,'complete_list':complete_list}
             list_page.append(page)
         return list_page
 
-    def _get_report_page(self,line_ids,quantity_line,var_control_name=None, var_control_length=1,quantity_copie=1):
+    def _get_report_page(self,line_ids,quantity_line,var_control_name=None, var_control_length=1,var_control_first_double=False,quantity_copie=1):
         ################
         # Este metodo arma las paginas para poder armar listas con determinada cantidad de registros en el reporte
         #   PARAMETROS:
@@ -101,7 +104,7 @@ class ReportAerooAbstract(models.AbstractModel):
         quantity_sum = 1
         for line_obj in line_ids:
             if var_control_name:
-                quantity_sum = self._calcule_quantity_sum(line_obj,var_control_name, var_control_length)
+                quantity_sum = self._calcule_quantity_sum(line_obj,var_control_name, var_control_length,var_control_first_double)
             if aux < quantity_line:
                 list_page_line.append(line_obj)
                 aux += quantity_sum
@@ -115,7 +118,14 @@ class ReportAerooAbstract(models.AbstractModel):
                 aux = 1
         if aux != 1:
             previus_list_page.append(list_page_line)
-            list_page = self._add_page(list_page,list_page_line,aux, quantity_copie,previus_list_page)
+            diff = quantity_line-aux
+            complete_list = ''
+            while diff!=0:
+                diff -=1
+                complete_list += '\n'
+                if var_control_first_double:
+                    complete_list += '\n'
+            list_page = self._add_page(list_page,list_page_line,aux, quantity_copie,previus_list_page,complete_list=complete_list)
         # saca el salto de pagina de la ultima hoja
         list_page[len(list_page)-1]['new_page'] = 0
         return list_page
