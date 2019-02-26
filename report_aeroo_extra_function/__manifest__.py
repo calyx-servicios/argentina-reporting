@@ -18,7 +18,7 @@
 #
 ##############################################################################
 {
-    'name': 'Argentinian Like Electronic Invoice Aeroo Report add Pages',
+    'name': 'Argentinian Like Electronic Invoice Aeroo Report add Extra Function',
     'version': '11.0.1.3.0',
     'category': 'Localization/Argentina',
     'sequence': 14,
