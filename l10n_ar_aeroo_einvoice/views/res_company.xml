@@ -11,7 +11,7 @@
                 <page string="Configuration Invoice">
                     <group>
                         <field name="quantity_copy_invoice"/>
-                        <field name="logo_invoice"/>
+                        <field name="logo_invoice" widget="image"/>
                     </group>
                 </page>
             </notebook>
