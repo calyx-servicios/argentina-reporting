@@ -36,6 +36,7 @@
     'data': [
         'report_configuration_defaults_data.xml',
         'report.xml',
+        'views/res_company.xml',
     ],
     'demo': [
     ],
