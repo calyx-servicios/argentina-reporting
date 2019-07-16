@@ -127,7 +127,8 @@ class ReportAerooAbstract(models.AbstractModel):
                     complete_list += '\n'
             list_page = self._add_page(list_page,list_page_line,aux, quantity_copie,previus_list_page,complete_list=complete_list)
         # saca el salto de pagina de la ultima hoja
-        list_page[len(list_page)-1]['new_page'] = 0
+        if len(list_page) != 0:
+            list_page[len(list_page)-1]['new_page'] = 0
         return list_page
 
 
