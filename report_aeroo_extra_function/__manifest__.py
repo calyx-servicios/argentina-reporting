@@ -19,15 +19,14 @@
 ##############################################################################
 {
     'name': 'Argentinian Like Electronic Invoice Aeroo Report add Extra Function',
-    'version': '11.0.1.3.0',
+    'version': '11.0.0',
     'category': 'Localization/Argentina',
     'sequence': 14,
-    'author': 'Saitam',
+    'author': 'Calyx',
     'website': '',
     'license': 'AGPL-3',
     'summary': '',
     'depends': [
-        # suponemos que si instalas este queres el comun tmb
         'report_aeroo',
     ],
     'external_dependencies': {
