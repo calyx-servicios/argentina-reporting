@@ -4,17 +4,11 @@
 ##############################################################################
 
 
-
 from odoo import api, models, _
-from odoo.tools.safe_eval import safe_eval
-
-
 
 class Parser(models.AbstractModel):
     _inherit = 'report.report_aeroo.abstract'
-    _name = 'report.account_invoice'
-
-
+    
     def _get_centro_costo(self,o):
         list_account = {}   
         for line_obj in o.invoice_line_ids:
@@ -26,7 +20,6 @@ class Parser(models.AbstractModel):
         if var_return != _(''):
             var_return = var_return[:-2]
         return var_return
-
 
     @api.model
     def aeroo_report(self, docids, data):
