@@ -8,6 +8,7 @@ from odoo import api, models, _
 
 class Parser(models.AbstractModel):
     _inherit = 'report.report_aeroo.abstract'
+    _name = 'report.account_invoice'
     
     def _get_centro_costo(self,o):
         list_account = {}   
