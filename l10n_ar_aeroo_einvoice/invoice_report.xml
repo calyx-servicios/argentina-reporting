@@ -3,8 +3,8 @@
     <data noupdate="0">
 
 
+        <delete id="action_aeroo_report_ar_einvoice" model="ir.actions.report" />
 
-    <!-- Printed Invoice -->
         <record id="action_aeroo_report_ar_einvoice" context="{'no_key_lines':True}" model="ir.actions.report">
             <field name="name">Argentinian Aeroo Electronic Invoice</field>
             <field name="model">account.invoice</field>
@@ -30,5 +30,9 @@
             id="update_lines_ar_invoice"
             model="ir.actions.report"
             name="update_lines_that_apply"/>
+
+
+
+
     </data>
 </odoo>
