@@ -120,7 +120,7 @@ class ReportAerooAbstract(models.AbstractModel):
             previus_list_page.append(list_page_line)
             diff = quantity_line-aux
             complete_list = ''
-            while diff!=0:
+            while diff>0:
                 diff -=1
                 complete_list += '\n'
                 if var_control_first_double:
