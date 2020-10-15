@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Argentinian Like Electronic Invoice Aeroo Report',
-    'version': '11.0.1.3.0',
+    'version': '11.0.1.4.0',
     'category': 'Localization/Argentina',
     'sequence': 14,
     'author': 'Calyx',
@@ -31,6 +31,7 @@
         # suponemos que si instalas este queres el comun tmb
         'report_aeroo_extra_function',
         'l10n_ar_aeroo_base',
+        'l10n_ar_aeroo_stock',
     ],
     'external_dependencies': {
     },
