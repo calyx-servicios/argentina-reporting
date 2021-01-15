@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.actions.report" id="l10n_ar_aeroo_payment_group.action_aeroo_report_ar_payment">
+        <field name="report_file">ar_aeroo_payment_group_extend/payment_2.odt</field>
+    </record>
+
+</odoo>
