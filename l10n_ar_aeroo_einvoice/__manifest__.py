@@ -19,19 +19,19 @@
 ##############################################################################
 {
     'name': 'Argentinian Like Electronic Invoice Aeroo Report',
-    'version': '11.0.1.4.0',
+    'version': '11.0.1.7.0',
     'category': 'Localization/Argentina',
     'sequence': 14,
-    'author': 'Calyx',
-    'website': '-',
+    'author': 'ADHOC SA',
+    'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'summary': '',
     'depends': [
         'l10n_ar_afipws_fe',
         # suponemos que si instalas este queres el comun tmb
-        'report_aeroo_extra_function',
-        'l10n_ar_aeroo_base',
-        'l10n_ar_aeroo_stock',
+        'l10n_ar_aeroo_invoice',
+        # 'report_extended_account',
+        # 'l10n_ar_aeroo_base',
     ],
     'external_dependencies': {
     },
@@ -46,4 +46,3 @@
     'auto_install': False,
     'application': False,
 }
-
