@@ -41,7 +41,7 @@
         name="Default Legend"
         action="action_account_invoice_interest_calc_wizard"
         parent="account_document.menu_document_type"
-        groups="account.group_account_manager,account.group_account_user"
+        groups="account.group_account_manager"
         />
 
 </odoo>
