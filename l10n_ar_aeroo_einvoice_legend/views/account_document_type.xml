@@ -1,13 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_document_type_form_extend" model="ir.ui.view">
-        <field name="name">account.document.type.form</field>
-        <field name="model">account.document.type</field>
-        <field name="inherit_id" ref="account_document.view_document_type_form"/>
+
+
+    <record id="default_legend_document_company_view_tree" model="ir.ui.view">
+        <field name="name">default.legend.document.company.view.tree</field>
+        <field name="model">default.legend.document.company</field>
         <field name="arch" type="xml">
-            <group>
+            <tree>
+                <field name="company"/>
+                <field name="document_type"/>
                 <field name="default_legend"/>
-            </group>
+            </tree>
         </field>
     </record>
+
+    <record id="default_legend_document_company_view_form" model="ir.ui.view">
+        <field name="name">default.legend.document.company.view.form</field>
+        <field name="model">default.legend.document.company</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="company"/>
+                    <field name="document_type"/>
+                </group>
+                <field name="default_legend"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_account_invoice_interest_calc_wizard" model="ir.actions.act_window">
+        <field name="name">Document Default Legend</field>
+        <field name="res_model">default.legend.document.company</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem
+        id="menu_default_legend_document_company"
+        name="Default Legend"
+        action="action_account_invoice_interest_calc_wizard"
+        parent="account_document.menu_document_type"
+        groups="account.group_account_manager,account.group_account_user"
+        />
+
 </odoo>
