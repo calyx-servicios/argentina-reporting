@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_default_legend_document_company_user,account.default.legend.document.company.user,model_default_legend_document_company,account.group_account_invoice,1,0,0,0
+access_default_legend_document_company_manager,account.default.legend.document.company.manager,model_default_legend_document_company,account.group_account_manager,1,1,1,1
