@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="invoice_form_document_legend" model="ir.ui.view">
+        <field name="name">invoice.form.document_legend</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='internal_notes']" position="before">
+                <field name="legend_in_document" placeholder="Add a comment to your report..."/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

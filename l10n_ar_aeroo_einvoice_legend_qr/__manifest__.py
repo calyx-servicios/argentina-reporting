@@ -4,7 +4,9 @@
     'summary': """
         You can extend the legend in the document settings, 
         it can be reflected in the printing of the invoice. 
-        You can also edit the default legend from the invoice form.""",
+        You can also edit the default legend from the invoice form.
+        The module is adapted to the new AFIP regulations that 
+        includes a QR code in Argentine electronic invoices..""",
 
     'author': 'Calyx Servicios S.A., Odoo Community Association (OCA)',
     'maintainers': ['Milton Guzman'],
@@ -13,7 +15,7 @@
     'license': 'AGPL-3',
 
     'category': 'Technical Settings',
-    'version': '11.0.2.0.0',
+    'version': '11.0.1.0.0',
     # see https://odoo-community.org/page/development-status
     'development_status': 'Production/Stable',
 
