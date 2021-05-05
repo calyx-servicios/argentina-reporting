@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="account.invoice_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='internal_notes']" position="before">
-                <field name="legend_in_document" placeholder="Add a comment to your report..."/>
+                <field name="legend_in_document" readonly="0" placeholder="Add a comment to your report..."/>
             </xpath>
         </field>
     </record>
