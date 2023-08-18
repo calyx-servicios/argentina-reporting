@@ -15,7 +15,7 @@
     'license': 'AGPL-3',
 
     'category': 'Technical Settings',
-    'version': '11.0.1.0.0',
+    'version': '11.0.1.0.1',
     # see https://odoo-community.org/page/development-status
     'development_status': 'Production/Stable',
 
